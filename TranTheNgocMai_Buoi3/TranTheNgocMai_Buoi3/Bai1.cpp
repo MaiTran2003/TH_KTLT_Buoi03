@@ -143,21 +143,29 @@ void diemYenNgua(int a[MAX][MAX], int m, int n) {
 
 // Hàm xuất dòng chỉ chứa số chẵn
 void xuatDongSoChan(int a[MAX][MAX], int m, int n) {
+	int hasEvenRow = 0;
 	printf("Cac dong chi chua so chan: \n");
+
 	for (int i = 0; i < m; i++) {
 		int isEvenRow = 1;
+
 		for (int j = 0; j < n; j++) {
 			if (a[i][j] % 2 != 0) {
 				isEvenRow = 0;
 				break;
 			}
 		}
+
 		if (isEvenRow) {
+			hasEvenRow = 1;
 			for (int j = 0; j < n; j++) {
 				printf("%d ", a[i][j]);
 			}
 			printf("\n");
 		}
+	}
+	if (!hasEvenRow) {
+		printf("Ma tran khong chua dong chi chua so chan.\n");
 	}
 }
 
